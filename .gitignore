@@ -1,0 +1,34 @@
+node_modules
+.env
+# Dependencies (Backend & Frontend)
+node_modules/
+**/node_modules/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+**/.env
+
+# Vite Frontend Production Build
+dist/
+dist-ssr/
+**/dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Editor & OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
