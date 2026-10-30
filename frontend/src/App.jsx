@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "http://localhost:3000/api/expenses";
+const API_URL = "https://expense-tracker-1-hkuo.onrender.com/api/expenses";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -41,7 +41,7 @@ function App() {
 
     try {
       if (editingId) {
-        const res = await axios.put(`\({API_URL}/\){editingId}`, payload);
+        const res = await axios.put(`${API_URL}/${editingId}`, payload);
         setTransactions(
           transactions.map((t) => (t._id === editingId ? res.data : t))
         );
@@ -67,7 +67,7 @@ function App() {
 
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`\({API_URL}/\){id}`);
+      await axios.delete(`${API_URL}/${id}`);
       setTransactions(transactions.filter((t) => t._id !== id));
     } catch (err) {
       console.error("Error deleting transaction:", err);
